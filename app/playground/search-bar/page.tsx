@@ -3,7 +3,7 @@ import Header from "@/components/header";
 
 export default function SearchBar() {
   return (
-    <div className="bg-background-rgb mx-auto my-8 h-screen max-w-[692px] px-5 py-5 antialiased sm:my-16 sm:px-6 sm:py-0">
+    <div className="bg-background-rgb mx-auto my-8 h-full max-w-[692px] px-5 py-5 antialiased sm:my-16 sm:px-6 sm:py-0 overflow-hidden">
       <Header />
       <main className="mx-auto flex w-full flex-col items-center justify-center leading-relaxed">
         <div className="mb-3 w-full items-center justify-center font-medium leading-loose">
@@ -27,7 +27,7 @@ export default function SearchBar() {
           decided to recreate some aspects of it and also add a bit more motion.
         </p>
         <div className="mt-8 w-full">
-          <div className="container flex w-full items-center justify-center whitespace-nowrap rounded-xl border-[1px] border-primary-foreground bg-card py-36 sm:w-full">
+          <div className="container flex w-full items-end justify-center whitespace-nowrap rounded-xl border-[1px] border-primary-foreground bg-card h-96 sm:w-full py-12">
             <AmieActionBar />
           </div>
         </div>
