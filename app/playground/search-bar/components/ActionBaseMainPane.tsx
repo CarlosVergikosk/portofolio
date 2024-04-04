@@ -29,8 +29,6 @@ export default function ActionBaseMainPane({ onSelect }: Props) {
   return (
     <motion.div
       layout="position"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
       className="w-auto box-content h-[40px] flex flex-row items-center justify-center gap-1"
     >
       <div className="flex flex-row items-center">

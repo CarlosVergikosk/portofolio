@@ -5,12 +5,29 @@ import relativeTime from "dayjs/plugin/relativeTime";
 import { motion } from "framer-motion";
 import { ChevronLeft, Moon, Watch } from "lucide-react";
 import Image from "next/image";
-import resolveConfig from "tailwindcss/resolveConfig";
-import tailwindConfig from "@/tailwind.config";
-
-const { theme } = resolveConfig(tailwindConfig);
+import React from "react";
 
 dayjs.extend(relativeTime);
+
+const WidgetItem = ({ children }: { children: any }) => {
+  const [effect, setEffect] = React.useState(false);
+
+  return (
+    <Button
+      variant={"ghost"}
+      size={"sm"}
+      className={`${
+        effect && "animate-shake"
+      } flex flex-row justify-start font-normal h-auto items-center py-3 gap-3`}
+      onClick={() => {
+        setEffect(true);
+      }}
+      onAnimationEnd={() => setEffect(false)}
+    >
+      {children}
+    </Button>
+  );
+};
 
 interface Props {
   onSelect: (page: string) => void;
@@ -27,12 +44,8 @@ export default function ActionBaseSmartPane({ onSelect }: Props) {
         <span className="font-semibold">{"Available in Pro"}</span>
       </div>
       <Separator className="my-1" />
-      <div className="w-full h-56 overflow-auto flex flex-col">
-        <Button
-          variant={"ghost"}
-          size={"sm"}
-          className="flex flex-row justify-start font-normal h-auto items-center py-3 gap-3"
-        >
+      <div className="w-full h-56 flex flex-col overflow-hidden">
+        <WidgetItem>
           <div className="h-10 w-12 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg flex items-center justify-center">
             <Moon size={24} fill={"#fff"} />
           </div>
@@ -42,12 +55,8 @@ export default function ActionBaseSmartPane({ onSelect }: Props) {
               {"Display the current weather based on your location"}
             </span>
           </div>
-        </Button>
-        <Button
-          variant={"ghost"}
-          size={"sm"}
-          className="flex flex-row justify-start font-normal h-auto items-center py-3 gap-3"
-        >
+        </WidgetItem>
+        <WidgetItem>
           <div className="h-10 w-12 bg-gradient-to-r from-slate-500 to-stone-400 rounded-lg flex items-center justify-center">
             <Watch size={24} className=" text-stone-100" />
           </div>
@@ -57,12 +66,8 @@ export default function ActionBaseSmartPane({ onSelect }: Props) {
               {"Connect your watch and track your time"}
             </span>
           </div>
-        </Button>
-        <Button
-          variant={"ghost"}
-          size={"sm"}
-          className="flex flex-row justify-start font-normal h-auto items-center py-3 gap-3"
-        >
+        </WidgetItem>
+        <WidgetItem>
           <div className="h-10 w-12 bg-gradient-to-r from-green-500 to-green-700 rounded-lg flex items-center justify-center">
             <Image
               src="/spotify.svg"
@@ -77,7 +82,7 @@ export default function ActionBaseSmartPane({ onSelect }: Props) {
               {"Share your favorite songs and playlists"}
             </span>
           </div>
-        </Button>
+        </WidgetItem>
       </div>
       <Separator className="my-1" />
       <motion.div
