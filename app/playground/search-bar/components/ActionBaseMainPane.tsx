@@ -15,6 +15,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Plus, Search, Settings, Sparkles } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
 
 const custom = "rounded-xl text-muted-foreground";
 
@@ -24,7 +25,12 @@ interface Props {
 
 export default function ActionBaseMainPane({ onSelect }: Props) {
   return (
-    <div className="w-auto box-content h-[40px] flex flex-row items-center justify-center gap-1">
+    <motion.div
+      layout="position"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      className="w-auto box-content h-[40px] flex flex-row items-center justify-center gap-1"
+    >
       <div className="flex flex-row items-center">
         <Button variant={"ghost"} size={"icon"} className={custom}>
           <Sparkles strokeWidth={1.6} />
@@ -97,6 +103,6 @@ export default function ActionBaseMainPane({ onSelect }: Props) {
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
-    </div>
+    </motion.div>
   );
 }

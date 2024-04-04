@@ -5,17 +5,6 @@ import ActionBaseMainPane from "@/app/playground/search-bar/components/ActionBas
 import { motion } from "framer-motion";
 import React from "react";
 
-const animate = {
-  ["main"]: {
-    width: 200,
-    height: 48,
-  },
-  ["create"]: {
-    width: 500,
-    height: 150,
-  },
-};
-
 export default function AmieActionBar() {
   const [page, setPane] = React.useState("main");
 
@@ -33,13 +22,17 @@ export default function AmieActionBar() {
   return (
     <motion.div
       layout
+      style={{ borderRadius: 16 }}
       transition={{
-        type: "spring",
-        duration: 0.3,
+        layout: {
+          type: "spring",
+          duration: 0.22,
+          bounce: 0.24,
+        },
       }}
-      className="flex items-center justify-end rounded-2xl bg-primary-foreground shadow-sm ring-[1px] ring-muted-foreground/10 backdrop-blur p-2 overflow-hidden"
+      className="flex items-center justify-end bg-primary-foreground shadow-sm ring-[1px] ring-muted-foreground/10 backdrop-blur p-1 overflow-hidden"
     >
-      <motion.div layout="position">{content}</motion.div>
+      {content}
     </motion.div>
   );
 }
