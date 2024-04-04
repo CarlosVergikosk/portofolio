@@ -115,7 +115,7 @@ export default function ActionBaseSearchPane({ onSelect }: Props) {
         />
       </div>
       <Separator className="my-1" />
-      <div className="w-full max-h-56 overflow-auto">
+      <div className="w-full h-[216px] overflow-auto">
         {results.length === 0 && (
           <div className="flex flex-col gap-1 items-center justify-center h-full text-muted-foreground">
             <Rabbit size={64} strokeWidth={1} />

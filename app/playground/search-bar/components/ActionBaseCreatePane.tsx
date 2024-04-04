@@ -1,5 +1,19 @@
 import { Button } from "@/components/ui/button";
+import { Calendar } from "@/components/ui/calendar";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 import {
   Select,
   SelectContent,
@@ -9,6 +23,7 @@ import {
 } from "@/components/ui/select";
 import { Separator } from "@/components/ui/separator";
 import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -21,24 +36,9 @@ import {
   UsersRound,
   Video,
 } from "lucide-react";
-import React from "react";
-import relativeTime from "dayjs/plugin/relativeTime";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
-import { Calendar } from "@/components/ui/calendar";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuGroup,
-  DropdownMenuItem,
-  DropdownMenuSeparator,
-  DropdownMenuShortcut,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import Image from "next/image";
+import React from "react";
+
 dayjs.extend(relativeTime);
 
 const custom = "rounded-xl text-muted-foreground";
@@ -96,7 +96,6 @@ export default function ActionBaseCreatePane({ onSelect }: Props) {
         />
       </div>
       <Separator className="my-1" />
-
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button
@@ -139,7 +138,7 @@ export default function ActionBaseCreatePane({ onSelect }: Props) {
         </DropdownMenuContent>
       </DropdownMenu>
       <Separator className="my-1" />
-      <div className="flex flex-row h-16 w-full items-start p-2  text-muted-foreground font-normal">
+      <div className="flex flex-row h-16 w-full items-start p-2 text-muted-foreground font-normal">
         <div className="text-sm flex flex-row gap-2">
           <UsersRound size={18} />
           <Input
@@ -151,8 +150,8 @@ export default function ActionBaseCreatePane({ onSelect }: Props) {
         </div>
       </div>
       <Separator className="my-1" />
-      <div className="text-sm flex flex-row h-16 w-full items-start p-2 gap-2">
-        <Clock size={18} />
+      <div className="text-sm flex flex-row h-16 w-full items-start p-2 gap-2 text-muted-foreground">
+        <Clock size={18} className="mt-0.5" />
         <div className="flex flex-col gap-1 text-muted-foreground">
           <div className="flex flex-row gap-1 items-center">
             <Select

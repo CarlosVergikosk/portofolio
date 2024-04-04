@@ -15,7 +15,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { motion } from "framer-motion";
-import { Plus, Search, Settings, Sparkles } from "lucide-react";
+import { Plus, Search, Settings, Shapes, Sparkles } from "lucide-react";
 
 const custom = "rounded-xl text-muted-foreground";
 
@@ -40,7 +40,7 @@ export default function ActionBaseMainPane({ onSelect }: Props) {
             onSelect("smart");
           }}
         >
-          <Sparkles strokeWidth={1.6} size={size} />
+          <Shapes strokeWidth={1.6} size={size} fill="currentColor" />
         </Button>
         <hr className="mx-2 h-4 w-px shrink-0 border-none bg-muted"></hr>
         <Button
