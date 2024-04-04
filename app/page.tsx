@@ -74,6 +74,32 @@ export default function Home() {
                 Recreation of the Amie action bar.
               </span>
             </a>
+            <a
+              href="/playground/globe"
+              target="_self"
+              rel=""
+              className="group -mx-4 flex flex-col rounded-xl px-4 py-3 no-underline transition-all duration-200 ease-in-out hover:bg-muted/30"
+            >
+              <span className="flex items-center font-normal">
+                GitHub Globe
+              </span>
+              <span className="text-muted-foreground">
+                A globe similar to the one on GitHub.
+              </span>
+            </a>
+            <a
+              href="/playground/stack-hover-effect"
+              target="_self"
+              rel=""
+              className="group -mx-4 flex flex-col rounded-xl px-4 py-3 no-underline transition-all duration-200 ease-in-out hover:bg-muted/30"
+            >
+              <span className="flex items-center font-normal">
+                Stack Hover Cards
+              </span>
+              <span className="text-muted-foreground">
+                Animated hover effect of a stack of calendar cards.
+              </span>
+            </a>
           </div>
         </div>
       </main>

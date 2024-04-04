@@ -27,7 +27,7 @@ export default function SearchBar() {
           decided to recreate some aspects of it and also add a bit more motion.
         </p>
         <div className="mt-8 w-full">
-          <div className="container flex w-full items-end justify-center whitespace-nowrap rounded-xl border-[1px] border-primary-foreground bg-card h-96 sm:w-full py-10">
+          <div className="container flex w-full items-end justify-center whitespace-nowrap rounded-xl border-[1px] border-muted-foreground/20 bg-card h-96 sm:w-full py-10">
             <AmieActionBar />
           </div>
         </div>

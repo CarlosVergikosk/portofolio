@@ -23,7 +23,6 @@ import {
 } from "@/components/ui/select";
 import { Separator } from "@/components/ui/separator";
 import dayjs from "dayjs";
-import relativeTime from "dayjs/plugin/relativeTime";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -38,6 +37,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import React from "react";
+import relativeTime from "dayjs/plugin/relativeTime";
 
 dayjs.extend(relativeTime);
 

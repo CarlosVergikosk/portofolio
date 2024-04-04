@@ -18,6 +18,15 @@ const config = {
       },
     },
     extend: {
+      scale: {
+        "65": "0.65",
+        "70": "0.70",
+        "75": "0.75",
+        "80": "0.80",
+        "85": "0.85",
+        "90": "0.90",
+        "95": "0.95",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
