@@ -27,6 +27,7 @@
     "react-dom": "^18",
     "resize-observer-polyfill": "^1.5.1",
     "tailwind-merge": "^2.2.2",
+    "tailwind-scrollbar-hide": "^1.1.7",
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {

@@ -79,9 +79,6 @@ export default function ActionBaseCreatePane({ onSelect }: Props) {
   return (
     <motion.div
       layout="position"
-      transition={{ duration: 0.3, type: "spring" }}
-      initial={{ y: 15, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
       className="box-content flex flex-col items-center justify-start w-96"
     >
       <div className="flex flex-col h-16 w-full items-start p-2">

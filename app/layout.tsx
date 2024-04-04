@@ -16,10 +16,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={cn(inter.className, "h-screen overflow-hidden")}>
-        {children}
-      </body>
+    <html lang="en" className="scrollbar-hide">
+      <body className={cn(inter.className, "h-full")}>{children}</body>
     </html>
   );
 }

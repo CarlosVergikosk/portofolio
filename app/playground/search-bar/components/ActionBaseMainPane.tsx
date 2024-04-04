@@ -14,10 +14,12 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { motion } from "framer-motion";
 import { Plus, Search, Settings, Sparkles } from "lucide-react";
-import { AnimatePresence, motion } from "framer-motion";
 
 const custom = "rounded-xl text-muted-foreground";
+
+const size = 22;
 
 interface Props {
   onSelect: (page: string) => void;
@@ -32,12 +34,26 @@ export default function ActionBaseMainPane({ onSelect }: Props) {
       className="w-auto box-content h-[40px] flex flex-row items-center justify-center gap-1"
     >
       <div className="flex flex-row items-center">
-        <Button variant={"ghost"} size={"icon"} className={custom}>
-          <Sparkles strokeWidth={1.6} />
+        <Button
+          variant={"ghost"}
+          size={"icon"}
+          className={custom}
+          onClick={() => {
+            onSelect("smart");
+          }}
+        >
+          <Sparkles strokeWidth={1.6} size={size} />
         </Button>
         <hr className="mx-2 h-4 w-px shrink-0 border-none bg-muted"></hr>
-        <Button variant={"ghost"} size={"icon"} className={custom}>
-          <Search />
+        <Button
+          variant={"ghost"}
+          size={"icon"}
+          className={custom}
+          onClick={() => {
+            onSelect("search");
+          }}
+        >
+          <Search size={size} />
         </Button>
         <Button
           variant={"ghost"}
@@ -47,12 +63,12 @@ export default function ActionBaseMainPane({ onSelect }: Props) {
             onSelect("create");
           }}
         >
-          <Plus />
+          <Plus size={size} />
         </Button>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant={"ghost"} size={"icon"} className={custom}>
-              <Settings />
+              <Settings size={size} />
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent className="w-56" align="start" side="top">
