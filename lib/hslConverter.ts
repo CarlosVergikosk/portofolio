@@ -81,14 +81,30 @@ export default function hslConverter(hsl: string, formatted: boolean) {
       (s = ref?.[1]),
       (l = ref?.[2]),
       (a = ref?.[3]);
-  } else if (isObject(hsl) && hasKeys(hsl, ["h", "s", "l"])) {
-    (h = hsl.h), (s = hsl.s), (l = hsl.l), (a = hsl.a);
+  } else if (
+    isObject(hsl) &&
+    hasKeys(hsl as unknown as object, ["h", "s", "l"])
+  ) {
+    const obj = hsl as unknown as {
+      h: number;
+      s: number;
+      l: number;
+      a: number;
+    };
+
+    h = obj.h;
+    s = obj.s;
+    l = obj.l;
+    a = obj.a;
   } else {
     return;
   }
-  h /= 360;
-  s /= 100;
-  l /= 100;
+
+  h = (h || 1) / 360;
+  s = (s || 1) / 100;
+  l = (l || 1) / 100;
+  a = a || 1;
+
   if (s === 0) {
     r = g = b = l;
   } else {
