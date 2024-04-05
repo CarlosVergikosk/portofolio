@@ -69,6 +69,20 @@ interface Props {
   onSelect: (page: string) => void;
 }
 
+const variants = {
+  hidden: {
+    opacity: 0,
+    y: 16,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 0.03,
+    },
+  },
+};
+
 export default function ActionBaseCreatePane({ onSelect }: Props) {
   const [date, setDate] = React.useState([defaultDate, defaultDate]);
   const [time, setTime] = React.useState([
@@ -80,6 +94,10 @@ export default function ActionBaseCreatePane({ onSelect }: Props) {
     <motion.div
       layout="position"
       className="box-content flex flex-col items-center justify-start w-96"
+      initial="hidden"
+      animate="visible"
+      exit="hidden"
+      variants={variants}
     >
       <div className="flex flex-col h-16 w-full items-start p-2">
         <Input

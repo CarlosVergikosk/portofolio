@@ -10,7 +10,7 @@ import { useMediaQuery } from "usehooks-ts";
 
 dayjs.extend(relativeTime);
 
-const transition = { duration: 0.3, type: "spring" };
+const transition = { duration: 0.42, type: "spring" };
 
 const size = "h-44 w-36 sm:h-60 sm:w-52";
 

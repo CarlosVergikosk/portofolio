@@ -7,6 +7,11 @@ import ActionBaseSmartPane from "@/app/playground/search-bar/components/ActionBa
 import { motion } from "framer-motion";
 import React from "react";
 
+const parentVariant = {
+  initial: { opacity: 0 },
+  animate: { opacity: 1, transition: { staggerChildren: 1 } },
+};
+
 export default function AmieActionBar() {
   const [page, setPane] = React.useState("main");
 
@@ -32,7 +37,9 @@ export default function AmieActionBar() {
   return (
     <motion.div
       layout
-      style={{ borderRadius: 16 }}
+      style={{
+        borderRadius: 16,
+      }}
       transition={{
         layout: {
           type: "spring",
@@ -40,7 +47,7 @@ export default function AmieActionBar() {
           bounce: 0.16,
         },
       }}
-      className="flex items-center justify-end bg-primary-foreground shadow-sm ring-[1px] ring-muted-foreground/10 p-1 overflow-hidden"
+      className="bg-primary-foreground shadow-sm ring-[1px] ring-muted-foreground/10 p-1 overflow-hidden"
     >
       {content}
     </motion.div>

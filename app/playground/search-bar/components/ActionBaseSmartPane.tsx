@@ -33,11 +33,29 @@ interface Props {
   onSelect: (page: string) => void;
 }
 
+const variants = {
+  hidden: {
+    opacity: 0,
+    y: 16,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 0.03,
+    },
+  },
+};
+
 export default function ActionBaseSmartPane({ onSelect }: Props) {
   return (
     <motion.div
       layout="position"
       className="box-content flex flex-col justify-start max-w-full sm:max-w-[450px]"
+      initial="hidden"
+      animate="visible"
+      exit="hidden"
+      variants={variants}
     >
       <div className="text-sm flex items-center justify-between p-2 text-muted-foreground">
         <span>{"Manage Widgets"}</span>

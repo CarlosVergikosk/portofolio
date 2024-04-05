@@ -72,6 +72,20 @@ export default function ActionBaseSearchPane({ onSelect }: Props) {
     { title: "Albert J.", time: "Director", type: "contacts" },
   ]);
 
+  const variants = {
+    hidden: {
+      opacity: 0,
+      y: 16,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: 0.03,
+      },
+    },
+  };
+
   const results = React.useMemo(() => {
     return events.filter((e) => {
       const searched = e.title.toLowerCase().includes(search.toLowerCase());
@@ -89,9 +103,13 @@ export default function ActionBaseSearchPane({ onSelect }: Props) {
   return (
     <motion.div
       layout="position"
-      className="box-content flex flex-col justify-start w-96"
+      className="flex flex-col justify-center max-w-full w-auto sm:max-w-[450px]"
+      initial="hidden"
+      animate="visible"
+      exit="hidden"
+      variants={variants}
     >
-      <div className="flex flex-row w-full justify-start items-baseline mx-2 box-border">
+      <div className="flex flex-row w-auto items-baseline mx-2 box-border">
         <Button
           variant={"ghost"}
           size={"sm"}
