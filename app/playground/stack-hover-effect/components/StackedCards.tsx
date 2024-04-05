@@ -5,13 +5,21 @@ import dayjs from "dayjs";
 import { motion } from "framer-motion";
 import React from "react";
 import relativeTime from "dayjs/plugin/relativeTime";
+import { cn } from "@/lib/utils";
+import { useMediaQuery } from "usehooks-ts";
 
 dayjs.extend(relativeTime);
 
 const transition = { duration: 0.3, type: "spring" };
 
+const size = "h-44 w-36 sm:h-60 sm:w-52";
+
 export default function StackedCards(): JSX.Element {
   const [hover, setHover] = React.useState(false);
+
+  const isSmall = useMediaQuery("(min-width: 640px)");
+  const x = isSmall ? 122 : 70;
+  const y = isSmall ? 20 : 16;
 
   return (
     <motion.div
@@ -24,12 +32,12 @@ export default function StackedCards(): JSX.Element {
       }}
     >
       <motion.div
-        className="absolute z-30 h-[240px] w-[200px] cursor-pointer"
+        className={cn(size, "absolute cursor-pointer")}
         transition={transition}
         animate={{
-          y: hover ? 10 : 38,
+          y: hover ? 10 : y * 2,
           scale: hover ? 1 : 0.8,
-          x: hover ? 122 : 0,
+          x: hover ? x : 0,
           rotate: hover ? 5 : 0,
           opacity: 0.8,
         }}
@@ -44,12 +52,12 @@ export default function StackedCards(): JSX.Element {
         />
       </motion.div>
       <motion.div
-        className="absolute z-30 h-[240px] w-[200px] cursor-pointer"
+        className={cn(size, "absolute cursor-pointer")}
         transition={transition}
         animate={{
-          y: hover ? 10 : 20,
+          y: hover ? 10 : y,
           scale: hover ? 1 : 0.9,
-          x: hover ? -122 : 0,
+          x: hover ? -x : 0,
           rotate: hover ? -5 : 0,
           opacity: 0.95,
         }}
@@ -64,7 +72,7 @@ export default function StackedCards(): JSX.Element {
         />
       </motion.div>
       <motion.div
-        className="absolute z-30 h-[240px] w-[200px] cursor-pointer"
+        className={cn(size, "absolute cursor-pointer")}
         transition={transition}
       >
         <CardItem

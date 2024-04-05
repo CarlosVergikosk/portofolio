@@ -45,26 +45,26 @@ export default function CardItem({
   }, [moreThanAnHour, tomorrow]);
 
   return (
-    <div className="bg-background flex flex-col gap-4 p-3 rounded-2xl shadow-md border border-solid border-muted-foreground/10 h-full">
+    <div className="bg-background flex flex-col gap-2 sm:gap-4 p-2.5 sm:p-3 rounded-2xl shadow-md border border-solid border-muted-foreground/10 h-full">
       <span
         className={cn(
-          "rounded-full px-3 py-1.5 text-xs font-medium w-fit",
+          "rounded-full px-2 py-1 sm:px-3 sm:py-1.5 text-xs font-medium w-fit",
           colors.bg,
           colors.text
         )}
       >
         {time}
       </span>
-      <span className="font-medium">{title}</span>
+      <span className="font-medium text-sm sm:text-base">{title}</span>
       <div className="flex flex-col">
-        <div className="flex flex-row items-center gap-2 text-sm text-muted-foreground">
+        <div className="flex flex-row items-center sm:gap-2 gap-1 text-[10px] sm:text-sm text-muted-foreground">
           <span>{from}</span>
-          <ArrowRight size={15} />
+          <ArrowRight className="shrink-0 w-2 sm:w-4" />
           <span>{to}</span>
         </div>
-        <div className="flex flex-row text-sm items-center text-muted-foreground">
+        <div className="flex flex-row text-[10px] sm:text-sm items-center text-muted-foreground">
           <span>{`${invited} invited`}</span>
-          <Dot size={15} />
+          <Dot className="shrink-0 w-3 sm:w-5" />
           <span>{`${accepted} accepted`}</span>
         </div>
       </div>

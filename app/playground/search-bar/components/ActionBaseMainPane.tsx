@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { motion } from "framer-motion";
 import { Plus, Search, Settings, Shapes, Sparkles } from "lucide-react";
+import Image from "next/image";
 
 const custom = "rounded-xl text-muted-foreground";
 
@@ -72,7 +73,9 @@ export default function ActionBaseMainPane({ onSelect }: Props) {
           <DropdownMenuContent className="w-56" align="start" side="top">
             <DropdownMenuItem>
               <Avatar className="h-8 w-8">
-                <AvatarImage src="https://pbs.twimg.com/profile_images/1714017504111005696/EbGiokeR_400x400.jpg" />
+                <AvatarImage asChild src="/cvk.svg">
+                  <Image src="/cvk.svg" alt="logo" width={32} height={32} />
+                </AvatarImage>
                 <AvatarFallback>CV</AvatarFallback>
               </Avatar>
               <DropdownMenuLabel className="flex flex-col">

@@ -40,7 +40,7 @@ export default function AmieActionBar() {
           bounce: 0.16,
         },
       }}
-      className="flex items-center justify-end bg-primary-foreground shadow-sm ring-[1px] ring-muted-foreground/10 backdrop-blur p-1 overflow-hidden"
+      className="flex items-center justify-end bg-primary-foreground shadow-sm ring-[1px] ring-muted-foreground/10 p-1 overflow-hidden"
     >
       {content}
     </motion.div>

@@ -2,6 +2,9 @@
 
 import StackedCards from "@/app/playground/stack-hover-effect/components/StackedCards";
 import Header from "@/components/header";
+import { cn } from "@/lib/utils";
+
+const size = "h-44 w-36 sm:h-60 sm:w-52";
 
 export default function StackHoverEffect() {
   return (
@@ -29,7 +32,12 @@ export default function StackHoverEffect() {
           <div className="relative container flex w-full items-end justify-center whitespace-nowrap rounded-xl border-[1px] border-muted-foreground/20 bg-card h-96 sm:w-full py-10">
             <div className="flex h-full w-full items-center justify-center">
               <div className="relative flex items-center justify-center">
-                <div className="absolute z-30 flex h-[240px] w-[200px] cursor-pointer flex-col justify-between rounded-2xl transition-all duration-[250] ease-out">
+                <div
+                  className={cn(
+                    size,
+                    "absolute z-30 flex cursor-pointer flex-col justify-between rounded-2xl transition-all duration-[250] ease-out"
+                  )}
+                >
                   <StackedCards />
                 </div>
               </div>

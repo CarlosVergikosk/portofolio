@@ -37,7 +37,7 @@ export default function ActionBaseSmartPane({ onSelect }: Props) {
   return (
     <motion.div
       layout="position"
-      className="box-content flex flex-col justify-start w-[450px]"
+      className="box-content flex flex-col justify-start max-w-full sm:max-w-[450px]"
     >
       <div className="text-sm flex items-center justify-between p-2 text-muted-foreground">
         <span>{"Manage Widgets"}</span>
@@ -46,29 +46,29 @@ export default function ActionBaseSmartPane({ onSelect }: Props) {
       <Separator className="my-1" />
       <div className="w-full h-56 flex flex-col overflow-hidden">
         <WidgetItem>
-          <div className="h-10 w-12 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg flex items-center justify-center">
+          <div className="h-10 w-10 sm:w-12 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg flex items-center justify-center shrink-0">
             <Moon size={24} fill={"#fff"} />
           </div>
-          <div className="flex flex-col justify-start font-normal items-start gap-0.5 text-muted-foreground">
+          <div className="flex flex-col justify-start font-normal items-start gap-0.5 text-muted-foreground overflow-hidden">
             <span className="text-primary">{"Weather"}</span>
-            <span className="text-xs font-light text-muted-foreground">
+            <span className="text-xs font-light text-muted-foreground truncate w-full">
               {"Display the current weather based on your location"}
             </span>
           </div>
         </WidgetItem>
         <WidgetItem>
-          <div className="h-10 w-12 bg-gradient-to-r from-slate-500 to-stone-400 rounded-lg flex items-center justify-center">
+          <div className="h-10 w-10 sm:w-12 bg-gradient-to-r from-slate-500 to-stone-400 rounded-lg flex items-center justify-center shrink-0">
             <Watch size={24} className=" text-stone-100" />
           </div>
-          <div className="flex flex-col justify-start font-normal items-start gap-0.5 text-muted-foreground">
+          <div className="flex flex-col justify-start font-normal items-start gap-0.5 text-muted-foreground overflow-hidden">
             <span className="text-primary">{"Watch"}</span>
-            <span className="text-xs font-light text-muted-foreground">
+            <span className="text-xs font-light text-muted-foreground truncate w-full">
               {"Connect your watch and track your time"}
             </span>
           </div>
         </WidgetItem>
         <WidgetItem>
-          <div className="h-10 w-12 bg-gradient-to-r from-green-500 to-green-700 rounded-lg flex items-center justify-center">
+          <div className="h-10 w-10 sm:w-12 bg-gradient-to-r from-green-500 to-green-700 rounded-lg flex items-center justify-center shrink-0">
             <Image
               src="/spotify.svg"
               width={28}
@@ -76,9 +76,9 @@ export default function ActionBaseSmartPane({ onSelect }: Props) {
               alt="Spotify logo"
             />
           </div>
-          <div className="flex flex-col justify-start font-normal items-start gap-0.5 text-muted-foreground">
+          <div className="flex flex-col justify-start font-normal items-start gap-0.5 text-muted-foreground overflow-hidden">
             <span className="text-primary">{"Connect to Spotify"}</span>
-            <span className="text-xs font-light text-muted-foreground">
+            <span className="text-xs font-light text-muted-foreground truncate w-full">
               {"Share your favorite songs and playlists"}
             </span>
           </div>
