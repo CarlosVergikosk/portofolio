@@ -1,6 +1,6 @@
 "use client";
 
-import StackedCards from "@/app/playground/stack-hover-effect/components/StackedCards";
+import CardViewSwitcher from "@/app/playground/stack-hover-effect/components/CardViewSwitcher";
 import Header from "@/components/header";
 import { cn } from "@/lib/utils";
 
@@ -32,14 +32,7 @@ export default function StackHoverEffect() {
           <div className="relative container flex w-full items-end justify-center whitespace-nowrap rounded-xl border-[1px] border-muted-foreground/20 bg-card h-96 sm:w-full py-10">
             <div className="flex h-full w-full items-center justify-center">
               <div className="relative flex items-center justify-center">
-                <div
-                  className={cn(
-                    size,
-                    "absolute z-30 flex cursor-pointer flex-col justify-between rounded-2xl transition-all duration-[250] ease-out"
-                  )}
-                >
-                  <StackedCards />
-                </div>
+                <CardViewSwitcher />
               </div>
             </div>
           </div>

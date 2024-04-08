@@ -1,15 +1,9 @@
 "use client";
 
-import CardItem from "@/app/playground/stack-hover-effect/components/CardItem";
-import dayjs from "dayjs";
+import { Label } from "@/components/ui/label";
+import { Switch } from "@/components/ui/switch";
 import { motion } from "framer-motion";
 import React from "react";
-import relativeTime from "dayjs/plugin/relativeTime";
-import { cn } from "@/lib/utils";
-import { useMediaQuery } from "usehooks-ts";
-import { motionConfig } from "@/app/playground/search-bar/motion/config";
-import { Switch } from "@/components/ui/switch";
-import { Label } from "@/components/ui/label";
 
 export default function PricingAnimated(): JSX.Element {
   const [yearly, setYearly] = React.useState(false);
@@ -17,7 +11,7 @@ export default function PricingAnimated(): JSX.Element {
   return (
     <motion.div className="overflow-hidden flex flex-col items-center">
       <div
-        className="flex items-center z-10 bg-primary-foreground justify-center gap-3 border border-solid border-muted-foreground/15 rounded-lg cursor-pointer select-none p-3 overflow-hidden"
+        className="flex items-center z-10 bg-primary-foreground justify-center gap-3 border border-solid border-muted-foreground/15 rounded-full cursor-pointer select-none p-3 px-4 overflow-hidden"
         onClick={() => {
           setYearly((prev) => !prev);
         }}
@@ -31,7 +25,6 @@ export default function PricingAnimated(): JSX.Element {
         <motion.div
           layout
           className="text-lg right-10 text-orange-400 font-semibold"
-          initial={{ opacity: 0, display: "none" }}
           transition={{
             rotate: {
               type: "spring",
@@ -42,10 +35,11 @@ export default function PricingAnimated(): JSX.Element {
             y: {
               type: "spring",
               stiffness: 300,
+              velocity: 100,
               damping: 10,
-              duration: 0.2,
             },
           }}
+          initial={{ opacity: 0, y: -50, display: "none" }}
           animate={{
             display: "flex",
             position: "absolute",

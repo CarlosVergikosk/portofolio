@@ -1,11 +1,10 @@
 "use client";
 
 import PricingAnimated from "@/app/playground/pricing-switch/components/PricingAnimated";
-import StackedCards from "@/app/playground/stack-hover-effect/components/StackedCards";
 import Header from "@/components/header";
 import { cn } from "@/lib/utils";
 
-const size = "h-44 w-36 sm:h-60 sm:w-52";
+const size = "h-44 w-40 sm:h-60 sm:w-52";
 
 export default function StackHoverEffect() {
   return (
@@ -16,17 +15,18 @@ export default function StackHoverEffect() {
           Pricing Switch
         </div>
         <p className="w-full text-muted-foreground">
-          I recently viewed a couple of stacked-cards on&nbsp;
+          I use&nbsp;
           <a
             className="underline decoration-light-mode-primary/15 decoration-2 transition-all duration-200 ease-in-out font-normal decoration-muted hover:decoration-muted-foreground"
-            href="https://www.twitter.com/"
+            href="https://layers.to"
             target="_blank"
             rel="noreferrer"
           >
-            Twitter
+            layers
           </a>
-          , it made me think about what's behind it and how to build something
-          like that.
+          &nbsp;a lot, its one of my main sources of inspiration. I saw this
+          switch animation on their pricing page and I really liked it, so I
+          decided to try and recreate it.
           <br />
         </p>
         <div className="mt-8 w-full">

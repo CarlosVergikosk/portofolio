@@ -3,13 +3,17 @@ import { cn } from "@/lib/utils";
 import { ArrowRight, Dot } from "lucide-react";
 import React from "react";
 
-interface Props {
+export type CallInfo = {
   title: string;
   time: string;
   invited: number;
   accepted: number;
   from?: string;
   to?: string;
+};
+
+interface Props extends CallInfo {
+  onJoin?: () => void;
 }
 
 export default function CardItem({
@@ -19,6 +23,7 @@ export default function CardItem({
   accepted,
   from,
   to,
+  onJoin,
 }: Props): JSX.Element {
   const moreThanAnHour = time.includes("hour");
   const tomorrow = time.includes("day");
@@ -45,7 +50,7 @@ export default function CardItem({
   }, [moreThanAnHour, tomorrow]);
 
   return (
-    <div className="bg-background flex flex-col gap-2 sm:gap-4 p-2.5 sm:p-3 rounded-2xl shadow-md border border-solid border-muted-foreground/10 h-full">
+    <>
       <span
         className={cn(
           "rounded-full px-2 py-1 sm:px-3 sm:py-1.5 text-xs font-medium w-fit",
@@ -68,9 +73,15 @@ export default function CardItem({
           <span>{`${accepted} accepted`}</span>
         </div>
       </div>
-      <Button className="w-full mt-auto" variant={"secondary"}>
+      <Button
+        className={"w-full mt-auto"}
+        variant={"secondary"}
+        onClick={() => {
+          onJoin && onJoin();
+        }}
+      >
         {"Join Meeting"}
       </Button>
-    </div>
+    </>
   );
 }

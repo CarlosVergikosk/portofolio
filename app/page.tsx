@@ -110,7 +110,7 @@ export default function Home() {
                 Pricing Switch
               </span>
               <span className="text-muted-foreground">
-                Monthly/Year pricing switcher.
+                Recreation of Layers.to pricing switch.
               </span>
             </a>
           </div>
