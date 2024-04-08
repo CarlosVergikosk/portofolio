@@ -94,10 +94,10 @@ export default function Home() {
               className="group -mx-4 flex flex-col rounded-xl px-4 py-3 no-underline hover:bg-muted/30"
             >
               <span className="flex items-center font-normal">
-                Stack Hover Cards
+                Stacked Event Cards
               </span>
               <span className="text-muted-foreground">
-                Animated hover effect of a stack of calendar cards.
+                A set of animated calendar cards.
               </span>
             </a>
             <a

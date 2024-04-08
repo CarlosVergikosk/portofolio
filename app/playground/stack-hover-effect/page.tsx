@@ -2,9 +2,6 @@
 
 import CardViewSwitcher from "@/app/playground/stack-hover-effect/components/CardViewSwitcher";
 import Header from "@/components/header";
-import { cn } from "@/lib/utils";
-
-const size = "h-44 w-36 sm:h-60 sm:w-52";
 
 export default function StackHoverEffect() {
   return (
@@ -12,7 +9,7 @@ export default function StackHoverEffect() {
       <Header />
       <main className="mx-auto flex w-full flex-col items-center justify-center leading-relaxed">
         <div className="mb-3 w-full items-center justify-center font-medium leading-loose">
-          Stack Hover Effect
+          Stacked Event Cards
         </div>
         <p className="w-full text-muted-foreground">
           I recently viewed a couple of stacked-cards on&nbsp;

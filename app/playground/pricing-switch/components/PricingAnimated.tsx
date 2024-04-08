@@ -11,7 +11,7 @@ export default function PricingAnimated(): JSX.Element {
   return (
     <motion.div className="overflow-hidden flex flex-col items-center">
       <div
-        className="flex items-center z-10 bg-primary-foreground justify-center gap-3 border border-solid border-muted-foreground/15 rounded-full cursor-pointer select-none p-3 px-4 overflow-hidden"
+        className="flex items-center z-10 bg-primary-foreground justify-center gap-3 border border-solid border-muted-foreground/15 rounded-full cursor-pointer select-none p-3 sm:px-4 overflow-hidden"
         onClick={() => {
           setYearly((prev) => !prev);
         }}
