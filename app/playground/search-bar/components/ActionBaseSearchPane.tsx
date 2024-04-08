@@ -44,6 +44,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import Image from "next/image";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { motionConfig } from "@/app/playground/search-bar/motion/config";
 dayjs.extend(relativeTime);
 
 const custom = "rounded-xl text-muted-foreground";
@@ -103,34 +104,38 @@ export default function ActionBaseSearchPane({ onSelect }: Props) {
   return (
     <motion.div
       layout="position"
-      className="flex flex-col justify-center max-w-full w-auto sm:max-w-[450px]"
+      className="flex flex-col justify-center max-w-full w-80 sm:w-[450px]"
       initial="hidden"
       animate="visible"
       exit="hidden"
       variants={variants}
     >
       <div className="flex flex-row w-auto items-baseline mx-2 box-border">
-        <Button
-          variant={"ghost"}
-          size={"sm"}
-          className="bg-muted-foreground/10 px-3 h-7 py-1 text-xs"
-          onClick={() => {
-            const idx = options.indexOf(selected) + 1;
+        <motion.div layout transition={motionConfig.transition}>
+          <Button
+            variant={"ghost"}
+            size={"sm"}
+            className="bg-muted-foreground/10 px-3 h-7 py-1 text-xs overflow-hidden"
+            onClick={() => {
+              const idx = options.indexOf(selected) + 1;
 
-            const option = options[idx] || options[0];
+              const option = options[idx] || options[0];
 
-            setSelected(option);
-          }}
-        >
-          {selected}
-        </Button>
-        <Input
-          variant={"ghost"}
-          autoFocus
-          className="px-2 placeholder:text-muted-foreground"
-          onChange={(e) => setSearch(e.target.value)}
-          placeholder={`Search ${selected.toLowerCase()}`}
-        />
+              setSelected(option);
+            }}
+          >
+            <motion.div layout="position">{selected}</motion.div>
+          </Button>
+        </motion.div>
+        <motion.div layout transition={motionConfig.transition}>
+          <Input
+            variant={"ghost"}
+            autoFocus
+            className="px-2 placeholder:text-muted-foreground"
+            onChange={(e) => setSearch(e.target.value)}
+            placeholder={`Search ${selected.toLowerCase()}`}
+          />
+        </motion.div>
       </div>
       <Separator className="my-1" />
       <div className="w-full h-[216px] overflow-auto">
@@ -168,7 +173,7 @@ export default function ActionBaseSearchPane({ onSelect }: Props) {
       </div>
       <Separator className="my-1" />
       <motion.div
-        transition={{ duration: 0.3, type: "spring" }}
+        transition={motionConfig.transition}
         className="flex flex-row justify-between items-center w-full"
       >
         <Button

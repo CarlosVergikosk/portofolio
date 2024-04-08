@@ -38,6 +38,7 @@ import {
 import Image from "next/image";
 import React from "react";
 import relativeTime from "dayjs/plugin/relativeTime";
+import { motionConfig } from "@/app/playground/search-bar/motion/config";
 
 dayjs.extend(relativeTime);
 
@@ -286,7 +287,7 @@ export default function ActionBaseCreatePane({ onSelect }: Props) {
       </div>
       <Separator className="my-1" />
       <motion.div
-        transition={{ duration: 0.3, type: "spring" }}
+        transition={motionConfig.transition}
         className="flex flex-row justify-between items-center w-full"
       >
         <Button

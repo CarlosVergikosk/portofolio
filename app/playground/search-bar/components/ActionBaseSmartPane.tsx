@@ -1,3 +1,4 @@
+import { motionConfig } from "@/app/playground/search-bar/motion/config";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import dayjs from "dayjs";
@@ -64,11 +65,11 @@ export default function ActionBaseSmartPane({ onSelect }: Props) {
       <Separator className="my-1" />
       <div className="w-full h-56 flex flex-col overflow-hidden">
         <WidgetItem>
-          <div className="h-10 w-10 sm:w-12 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg flex items-center justify-center shrink-0">
+          <div className="h-10 w-10 sm:w-12 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg flex items-center justify-center shrink-0 text-[#fff]">
             <Moon size={24} fill={"#fff"} />
           </div>
           <div className="flex flex-col justify-start font-normal items-start gap-0.5 text-muted-foreground overflow-hidden">
-            <span className="text-primary">{"Weather"}</span>
+            <span className="text-primary font-medium">{"Weather"}</span>
             <span className="text-xs font-light text-muted-foreground truncate w-full">
               {"Display the current weather based on your location"}
             </span>
@@ -79,7 +80,7 @@ export default function ActionBaseSmartPane({ onSelect }: Props) {
             <Watch size={24} className=" text-stone-100" />
           </div>
           <div className="flex flex-col justify-start font-normal items-start gap-0.5 text-muted-foreground overflow-hidden">
-            <span className="text-primary">{"Watch"}</span>
+            <span className="text-primary font-medium">{"Watch"}</span>
             <span className="text-xs font-light text-muted-foreground truncate w-full">
               {"Connect your watch and track your time"}
             </span>
@@ -95,7 +96,9 @@ export default function ActionBaseSmartPane({ onSelect }: Props) {
             />
           </div>
           <div className="flex flex-col justify-start font-normal items-start gap-0.5 text-muted-foreground overflow-hidden">
-            <span className="text-primary">{"Connect to Spotify"}</span>
+            <span className="text-primary font-medium">
+              {"Connect to Spotify"}
+            </span>
             <span className="text-xs font-light text-muted-foreground truncate w-full">
               {"Share your favorite songs and playlists"}
             </span>
@@ -104,7 +107,7 @@ export default function ActionBaseSmartPane({ onSelect }: Props) {
       </div>
       <Separator className="my-1" />
       <motion.div
-        transition={{ duration: 0.3, type: "spring" }}
+        transition={motionConfig.transition}
         className="flex flex-row justify-between items-center w-full"
       >
         <Button
@@ -117,7 +120,10 @@ export default function ActionBaseSmartPane({ onSelect }: Props) {
         >
           <ChevronLeft />
         </Button>
-        <Button variant={"secondary"} className="rounded-xl py-2 h-auto">
+        <Button
+          variant={"ghost"}
+          className="bg-muted-foreground/10 rounded-xl py-2 h-auto"
+        >
           {"Upgrade to Pro"}
         </Button>
       </motion.div>

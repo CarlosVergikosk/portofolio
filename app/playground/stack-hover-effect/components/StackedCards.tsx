@@ -7,10 +7,9 @@ import React from "react";
 import relativeTime from "dayjs/plugin/relativeTime";
 import { cn } from "@/lib/utils";
 import { useMediaQuery } from "usehooks-ts";
+import { motionConfig } from "@/app/playground/search-bar/motion/config";
 
 dayjs.extend(relativeTime);
-
-const transition = { duration: 0.42, type: "spring" };
 
 const size = "h-44 w-36 sm:h-60 sm:w-52";
 
@@ -33,7 +32,7 @@ export default function StackedCards(): JSX.Element {
     >
       <motion.div
         className={cn(size, "absolute cursor-pointer")}
-        transition={transition}
+        transition={motionConfig.transition}
         animate={{
           y: hover ? 10 : y * 2,
           scale: hover ? 1 : 0.8,
@@ -53,7 +52,7 @@ export default function StackedCards(): JSX.Element {
       </motion.div>
       <motion.div
         className={cn(size, "absolute cursor-pointer")}
-        transition={transition}
+        transition={motionConfig.transition}
         animate={{
           y: hover ? 10 : y,
           scale: hover ? 1 : 0.9,
@@ -73,7 +72,7 @@ export default function StackedCards(): JSX.Element {
       </motion.div>
       <motion.div
         className={cn(size, "absolute cursor-pointer")}
-        transition={transition}
+        transition={motionConfig.transition}
       >
         <CardItem
           title={"Design Session"}
