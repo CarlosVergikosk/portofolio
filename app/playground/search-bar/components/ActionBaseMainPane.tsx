@@ -86,7 +86,11 @@ export default function ActionBaseMainPane({ onSelect }: Props) {
             <Settings size={size} />
           </Button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent className="w-56" align="start" side="top">
+        <DropdownMenuContent
+          className="w-56 border-none"
+          align="start"
+          side="top"
+        >
           <DropdownMenuItem>
             <Avatar className="h-8 w-8">
               <AvatarImage asChild src="/cvk.svg">
