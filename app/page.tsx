@@ -65,7 +65,7 @@ export default function Home() {
               href="/playground/search-bar"
               target="_self"
               rel=""
-              className="group -mx-4 flex flex-col rounded-xl px-4 py-3 no-underline transition-all duration-200 ease-in-out hover:bg-muted/30"
+              className="group -mx-4 flex flex-col rounded-xl px-4 py-3 no-underline hover:bg-muted/30"
             >
               <span className="flex items-center font-normal">
                 Amie Action Bar
@@ -78,7 +78,7 @@ export default function Home() {
               href="/playground/globe"
               target="_self"
               rel=""
-              className="group -mx-4 flex flex-col rounded-xl px-4 py-3 no-underline transition-all duration-200 ease-in-out hover:bg-muted/30"
+              className="group -mx-4 flex flex-col rounded-xl px-4 py-3 no-underline hover:bg-muted/30"
             >
               <span className="flex items-center font-normal">
                 GitHub Globe
@@ -91,13 +91,26 @@ export default function Home() {
               href="/playground/stack-hover-effect"
               target="_self"
               rel=""
-              className="group -mx-4 flex flex-col rounded-xl px-4 py-3 no-underline transition-all duration-200 ease-in-out hover:bg-muted/30"
+              className="group -mx-4 flex flex-col rounded-xl px-4 py-3 no-underline hover:bg-muted/30"
             >
               <span className="flex items-center font-normal">
                 Stack Hover Cards
               </span>
               <span className="text-muted-foreground">
                 Animated hover effect of a stack of calendar cards.
+              </span>
+            </a>
+            <a
+              href="/playground/pricing-switch"
+              target="_self"
+              rel=""
+              className="group -mx-4 flex flex-col rounded-xl px-4 py-3 no-underline hover:bg-muted/30"
+            >
+              <span className="flex items-center font-normal">
+                Pricing Switch
+              </span>
+              <span className="text-muted-foreground">
+                Monthly/Year pricing switcher.
               </span>
             </a>
           </div>

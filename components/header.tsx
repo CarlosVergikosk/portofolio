@@ -7,7 +7,7 @@ export default function Header() {
       <link rel="shortcut icon" href="/cvk.ico" />
       <a
         href="/"
-        className="flex flex-row items-center gap-4 transition-all duration-200 ease-in-out hover:bg-muted/30 rounded-lg p-4"
+        className="flex flex-row items-center gap-4 hover:bg-muted/30 rounded-lg p-4"
       >
         <Avatar className="h-10 w-10">
           <AvatarImage asChild src="/cvk.svg">
