@@ -1,4 +1,4 @@
-# My Next.js Project
+# Portofolio
 
 This repository contains a Next.js project deployed on Vercel. It utilizes Tailwind CSS, Shadcn UI, TypeScript, and Next.js. 
 
