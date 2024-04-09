@@ -2,6 +2,7 @@ import AmieActionBar from "@/app/playground/search-bar/components/AmieActionBar"
 import Header from "@/components/header";
 import { ContentWrapper } from "@/components/ui/content-wrapper";
 import { Description } from "@/components/ui/description";
+import { Reference } from "@/components/ui/reference";
 import { Title } from "@/components/ui/title";
 
 export default function SearchBar() {
@@ -12,14 +13,7 @@ export default function SearchBar() {
         <Title>Amie inspired search bar</Title>
         <Description>
           When I first used&nbsp;
-          <a
-            className="underline decoration-light-mode-primary/15 decoration-2 transition-all duration-200 ease-in-out font-normal decoration-muted hover:decoration-muted-foreground"
-            href="https://www.amie.so/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Amie
-          </a>
+          <Reference href="https://www.amie.so/">Amie</Reference>
           , I instantly noticed the action bar on the bottom. It seemed like a
           nice way to interact with the app, instead of using a regular
           navigation bar.

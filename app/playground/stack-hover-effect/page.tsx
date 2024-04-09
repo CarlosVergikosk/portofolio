@@ -4,6 +4,7 @@ import CardViewSwitcher from "@/app/playground/stack-hover-effect/components/Car
 import Header from "@/components/header";
 import { ContentWrapper } from "@/components/ui/content-wrapper";
 import { Description } from "@/components/ui/description";
+import { Reference } from "@/components/ui/reference";
 import { Title } from "@/components/ui/title";
 
 export default function StackHoverEffect() {
@@ -14,14 +15,7 @@ export default function StackHoverEffect() {
         <Title>Stacked Event Cards</Title>
         <Description>
           I recently viewed a couple of stacked-cards on&nbsp;
-          <a
-            className="underline decoration-light-mode-primary/15 decoration-2 transition-all duration-200 ease-in-out font-normal decoration-muted hover:decoration-muted-foreground"
-            href="https://www.twitter.com/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Twitter
-          </a>
+          <Reference href="https://www.twitter.com/">Twitter</Reference>
           , it made me think about what's behind it and how to build something
           like that.
           <br />

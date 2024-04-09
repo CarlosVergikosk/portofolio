@@ -1,5 +1,6 @@
 import Header from "@/components/header";
 import { Description } from "@/components/ui/description";
+import { Reference } from "@/components/ui/reference";
 import { Separator } from "@/components/ui/separator";
 import { Title } from "@/components/ui/title";
 
@@ -12,16 +13,9 @@ export default function Home() {
           <Title>About</Title>
           <Description>
             I'm a Product / Lead Frontend at&nbsp;
-            <a
-              className="font-normal underline decoration-2 transition-all duration-200 ease-in-out decoration-muted hover:decoration-foreground hover:text-foreground"
-              href="https://ketl.io/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              ketl
-            </a>
-            . I craft &amp; build interfaces that are fluid, make people feel
-            something and serve as extensions of real life in the digital world.
+            <Reference href="https://ketl.io/">ketl</Reference>. I craft &amp;
+            build interfaces that are fluid, make people feel something and
+            serve as extensions of real life in the digital world.
           </Description>
           <div className="mt-16 flex w-full flex-col justify-between gap-4 sm:flex-row sm:gap-8">
             <a
@@ -122,14 +116,12 @@ export default function Home() {
           </span>
           <span className="text-muted-foreground text-xs">
             {`Website built using Next.js & TailwindCSS `}
-            <a
+            <Reference
               href="https://github.com/CarlosVergikosk/portofolio"
-              target="_blank"
-              rel="noreferrer"
-              className="font-normal underline decoration-1 transition-all duration-200 ease-in-out decoration-muted hover:decoration-foreground"
+              className="decoration-1"
             >
               {"(source code)"}
-            </a>
+            </Reference>
           </span>
         </div>
       </main>

@@ -2,6 +2,7 @@
 import Header from "@/components/header";
 import { ContentWrapper } from "@/components/ui/content-wrapper";
 import { Description } from "@/components/ui/description";
+import { Reference } from "@/components/ui/reference";
 import { Title } from "@/components/ui/title";
 import tailwindConfig from "@/tailwind.config";
 import dynamic from "next/dynamic";
@@ -417,28 +418,16 @@ export default function Globe() {
         <Title> GitHub inspired Globe</Title>
         <Description>
           The other day I saw an article about how&nbsp;
-          <a
-            className="underline decoration-light-mode-primary/15 decoration-2 transition-all duration-200 ease-in-out font-normal decoration-muted hover:decoration-muted-foreground"
-            href="https://www.github.com/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            GitHub
-          </a>
-          &nbsp;created their globe, i was curious about what was behind such
-          animation and its complexity, so i tried building my own.
+          <Reference href="https://www.github.com/">GitHub</Reference>. I craft
+          &amp; &nbsp;created their globe, i was curious about what was behind
+          such animation and its complexity, so i tried building my own.
           <br />
           <br />I used&nbsp;
-          <a
-            className="underline decoration-light-mode-primary/15 decoration-2 transition-all duration-200 ease-in-out font-normal decoration-muted hover:decoration-muted-foreground"
-            href="https://github.blog/2020-12-21-how-we-built-the-github-globe/"
-            target="_blank"
-            rel="noreferrer"
-          >
+          <Reference href="https://github.blog/2020-12-21-how-we-built-the-github-globe/">
             their article
-          </a>
-          &nbsp;as a base of knowledge to try to reproduce it, it was a funny
-          challenge.
+          </Reference>
+          . I craft &nbsp;as a base of knowledge to try to reproduce it, it was
+          a funny challenge.
         </Description>
         <div className="mt-8 w-full">
           <div className="container flex w-full items-end justify-center whitespace-nowrap rounded-xl border-[1px] border-muted-foreground/20 bg-card h-96 sm:w-full py-10">

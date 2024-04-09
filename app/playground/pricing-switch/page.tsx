@@ -4,6 +4,7 @@ import PricingAnimated from "@/app/playground/pricing-switch/components/PricingA
 import Header from "@/components/header";
 import { ContentWrapper } from "@/components/ui/content-wrapper";
 import { Description } from "@/components/ui/description";
+import { Reference } from "@/components/ui/reference";
 import { Title } from "@/components/ui/title";
 import { cn } from "@/lib/utils";
 
@@ -17,14 +18,7 @@ export default function StackHoverEffect() {
         <Title>Pricing Switch</Title>
         <Description>
           I use&nbsp;
-          <a
-            className="underline decoration-light-mode-primary/15 decoration-2 transition-all duration-200 ease-in-out font-normal decoration-muted hover:decoration-muted-foreground"
-            href="https://layers.to"
-            target="_blank"
-            rel="noreferrer"
-          >
-            layers
-          </a>
+          <Reference href="https://layers.to">layers</Reference>
           &nbsp;a lot, its one of my main sources of inspiration. I saw this
           switch animation on their pricing page and I really liked it, so I
           decided to try and recreate it.
