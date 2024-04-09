@@ -1,4 +1,5 @@
 import Header from "@/components/header";
+import ComponentItem from "@/components/ui/component-item";
 import { Description } from "@/components/ui/description";
 import { Reference } from "@/components/ui/reference";
 import { Separator } from "@/components/ui/separator";
@@ -8,8 +9,8 @@ export default function Home() {
   return (
     <div className="mx-auto my-8 max-w-[692px] py-5 antialiased sm:my-16 sm:px-6 sm:py-0">
       <Header />
-      <main className="mx-auto flex w-full flex-col px-5 items-center justify-center leading-relaxed">
-        <div>
+      <main className="mx-auto flex w-full flex-col items-center justify-center leading-relaxed">
+        <div className="px-5">
           <Title>About</Title>
           <Description>
             I'm a Product / Lead Frontend at&nbsp;
@@ -52,77 +53,47 @@ export default function Home() {
             </a>
           </div>
         </div>
-        <div className="mt-16 w-full sm:mt-24">
+        <div className="mt-16 w-full sm:mt-24 px-5">
           <Title>Components</Title>
           <div className="flex flex-col gap-y-2">
-            <a
+            <ComponentItem
               href="/playground/search-bar"
-              target="_self"
-              rel=""
-              className="group -mx-4 flex flex-col rounded-xl px-4 py-3 no-underline hover:bg-muted/30"
-            >
-              <span className="flex items-center font-normal">
-                Amie Action Bar
-              </span>
-              <span className="text-muted-foreground">
-                Recreation of the Amie action bar.
-              </span>
-            </a>
-            <a
+              title={"Amie Action Bar"}
+              description="Recreation of the Amie action bar"
+            />
+            <ComponentItem
               href="/playground/globe"
-              target="_self"
-              rel=""
-              className="group -mx-4 flex flex-col rounded-xl px-4 py-3 no-underline hover:bg-muted/30"
-            >
-              <span className="flex items-center font-normal">
-                GitHub Globe
-              </span>
-              <span className="text-muted-foreground">
-                A globe similar to the one on GitHub.
-              </span>
-            </a>
-            <a
+              title={"GitHub Globe"}
+              description="A globe similar to the one on GitHub"
+            />
+            <ComponentItem
               href="/playground/stack-hover-effect"
-              target="_self"
-              rel=""
-              className="group -mx-4 flex flex-col rounded-xl px-4 py-3 no-underline hover:bg-muted/30"
-            >
-              <span className="flex items-center font-normal">
-                Stacked Event Cards
-              </span>
-              <span className="text-muted-foreground">
-                A set of animated calendar cards.
-              </span>
-            </a>
-            <a
+              title={"Stacked Event Cards"}
+              description="A set of animated calendar cards"
+            />
+            <ComponentItem
               href="/playground/pricing-switch"
-              target="_self"
-              rel=""
-              className="group -mx-4 flex flex-col rounded-xl px-4 py-3 no-underline hover:bg-muted/30"
-            >
-              <span className="flex items-center font-normal">
-                Pricing Switch
-              </span>
-              <span className="text-muted-foreground">
-                Recreation of Layers.to pricing switch.
-              </span>
-            </a>
+              title={"Pricing Switch"}
+              description="Recreation of Layers.to pricing switch"
+            />
           </div>
         </div>
-        <Separator className="mt-16 mb-6 w-full" />
-        <div className="flex flex-wrap justify-between items-start gap-2 w-full ">
-          <span className="text-muted-foreground text-xs">
-            {`© ${new Date().getFullYear()} Carlos Vergikosk. All Rights Reserved.`}
-          </span>
-          <span className="text-muted-foreground text-xs">
-            {`Website built using Next.js & TailwindCSS `}
-            <Reference
-              href="https://github.com/CarlosVergikosk/portofolio"
-              className="decoration-1"
-            >
-              {"(source code)"}
-            </Reference>
-          </span>
+        <div className="px-5">
+          <Separator className="mt-16 mb-6 w-full" />
+          <div className="flex flex-wrap justify-between items-start gap-2 w-full ">
+            <span className="text-muted-foreground text-xs">
+              {`© ${new Date().getFullYear()} Carlos Vergikosk. All Rights Reserved.`}
+            </span>
+            <span className="text-muted-foreground text-xs">
+              {`Website built using Next.js & TailwindCSS `}
+              <Reference
+                href="https://github.com/CarlosVergikosk/portofolio"
+                className="decoration-1"
+              >
+                {"(source code)"}
+              </Reference>
+            </span>
+          </div>
         </div>
       </main>
     </div>

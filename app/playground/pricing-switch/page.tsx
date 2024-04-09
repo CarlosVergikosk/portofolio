@@ -18,10 +18,11 @@ export default function StackHoverEffect() {
         <Title>Pricing Switch</Title>
         <Description>
           I use&nbsp;
-          <Reference href="https://layers.to">layers</Reference>
-          &nbsp;a lot, its one of my main sources of inspiration. I saw this
-          switch animation on their pricing page and I really liked it, so I
-          decided to try and recreate it.
+          <Reference href="https://layers.to">Layers</Reference>
+          &nbsp;for inspiration very often — it's my go-to when i need to
+          refresh my head! Recently Came across this slick switch animation on
+          their pricing page and totally vibed with it. Got me thinking, "Hey,
+          why not give it a shot and try to recreate it?"
           <br />
         </Description>
         <div className="mt-8 w-full">

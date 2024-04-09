@@ -9,7 +9,11 @@ import React from "react";
 
 dayjs.extend(relativeTime);
 
-export default function CardViewSwitcher(): JSX.Element {
+interface Props {
+  onViewChange: React.Dispatch<React.SetStateAction<number>>;
+}
+
+export default function CardViewSwitcher({ onViewChange }: Props): JSX.Element {
   const [call, setCall] = React.useState<CallInfo | null>(null);
 
   if (call) {
@@ -18,6 +22,7 @@ export default function CardViewSwitcher(): JSX.Element {
         data={call}
         onDisconnect={() => {
           setCall(null);
+          onViewChange(0);
         }}
       />
     );
@@ -27,6 +32,7 @@ export default function CardViewSwitcher(): JSX.Element {
     <StackedCards
       onJoin={(data: CallInfo) => {
         setCall(data);
+        onViewChange(1);
       }}
     />
   );
