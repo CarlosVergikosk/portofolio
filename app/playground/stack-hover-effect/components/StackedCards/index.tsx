@@ -102,7 +102,7 @@ export default function StackedCards({
                 className={cn(size, "absolute cursor-pointer")}
                 transition={motionConfig.transition}
                 initial={{
-                  opacity: 0,
+                  opacity: 1,
                 }}
                 animate={{
                   y: event.position?.y(y, hover),

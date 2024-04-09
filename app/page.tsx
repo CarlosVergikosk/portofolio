@@ -1,14 +1,16 @@
 import Header from "@/components/header";
+import { Description } from "@/components/ui/description";
+import { Separator } from "@/components/ui/separator";
+import { Title } from "@/components/ui/title";
 
 export default function Home() {
   return (
-    <div className="mx-auto my-8 max-w-[692px] px-5 py-5 antialiased sm:my-16 sm:px-6 sm:py-0">
+    <div className="mx-auto my-8 max-w-[692px] py-5 antialiased sm:my-16 sm:px-6 sm:py-0">
       <Header />
-      <main className="mx-auto flex w-full flex-col items-center justify-center leading-relaxed">
+      <main className="mx-auto flex w-full flex-col px-5 items-center justify-center leading-relaxed">
         <div>
-          <div className="flex flex-col"></div>
-          <div className="mb-5 text-primary font-medium sm:mb-4">About</div>
-          <p className="leading-[1.5] text-muted-foreground">
+          <Title>About</Title>
+          <Description>
             I'm a Product / Lead Frontend at&nbsp;
             <a
               className="font-normal underline decoration-2 transition-all duration-200 ease-in-out decoration-muted hover:decoration-foreground hover:text-foreground"
@@ -20,7 +22,7 @@ export default function Home() {
             </a>
             . I craft &amp; build interfaces that are fluid, make people feel
             something and serve as extensions of real life in the digital world.
-          </p>
+          </Description>
           <div className="mt-16 flex w-full flex-col justify-between gap-4 sm:flex-row sm:gap-8">
             <a
               href="mailto:j@kbo.sk"
@@ -57,10 +59,8 @@ export default function Home() {
           </div>
         </div>
         <div className="mt-16 w-full sm:mt-24">
-          <div className="mb-5 font-medium text-primary sm:mb-4">
-            Components
-          </div>
-          <div className="flex flex-col gap-y-4">
+          <Title>Components</Title>
+          <div className="flex flex-col gap-y-2">
             <a
               href="/playground/search-bar"
               target="_self"
@@ -114,6 +114,23 @@ export default function Home() {
               </span>
             </a>
           </div>
+        </div>
+        <Separator className="mt-16 mb-6 w-full" />
+        <div className="flex flex-wrap justify-between items-start gap-2 w-full ">
+          <span className="text-muted-foreground text-xs">
+            {`© ${new Date().getFullYear()} Carlos Vergikosk. All Rights Reserved.`}
+          </span>
+          <span className="text-muted-foreground text-xs">
+            {`Website built using Next.js & TailwindCSS `}
+            <a
+              href="https://github.com/CarlosVergikosk/portofolio"
+              target="_blank"
+              rel="noreferrer"
+              className="font-normal underline decoration-1 transition-all duration-200 ease-in-out decoration-muted hover:decoration-foreground"
+            >
+              {"(source code)"}
+            </a>
+          </span>
         </div>
       </main>
     </div>

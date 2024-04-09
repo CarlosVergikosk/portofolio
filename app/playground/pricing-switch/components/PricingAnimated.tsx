@@ -8,7 +8,6 @@ import React from "react";
 export default function PricingAnimated(): JSX.Element {
   const [yearly, setYearly] = React.useState(false);
 
-  console.log({ yearly });
   return (
     <motion.div className="overflow-hidden flex flex-col items-center">
       <div
@@ -70,7 +69,7 @@ export default function PricingAnimated(): JSX.Element {
             stiffness: 300,
             damping: 15,
             duration: 0.2,
-            delay: 0.08,
+            delay: 0.05,
           }}
           initial={{ rotate: yearly ? 0 : 180 }}
           animate={{ rotate: yearly ? 0 : 180 }}
