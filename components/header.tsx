@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function Header() {
   return (
     <header className="-mx-4 mx auto mb-16 sm:mb-16">
-      <link rel="shortcut icon" href="/cvk.ico" />
+      <link rel="icon" type="image/x-icon" href="/cvk.ico" />
       <a
         href="/"
         className="flex flex-row items-center gap-4 hover:bg-muted/30 rounded-lg p-4"
