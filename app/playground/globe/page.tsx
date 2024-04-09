@@ -6,6 +6,7 @@ import { Reference } from "@/components/ui/reference";
 import { Title } from "@/components/ui/title";
 import tailwindConfig from "@/tailwind.config";
 import dynamic from "next/dynamic";
+import { Suspense } from "react";
 import resolveConfig from "tailwindcss/resolveConfig";
 
 const { theme } = resolveConfig(tailwindConfig);
@@ -432,7 +433,11 @@ export default function Globe() {
         <div className="mt-8 w-full">
           <div className="container flex w-full items-end justify-center whitespace-nowrap rounded-xl border-[1px] border-muted-foreground/20 bg-card h-96 sm:w-full py-10">
             <div className="w-60 h-60 xl:w-80 xl:h-80">
-              <World data={sampleArcs} globeConfig={globeConfig} />
+              <Suspense
+                fallback={<div className="text-[#fff]">Loading...</div>}
+              >
+                <World data={sampleArcs} globeConfig={globeConfig} />
+              </Suspense>
             </div>
           </div>
         </div>
