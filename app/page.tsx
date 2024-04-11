@@ -7,9 +7,9 @@ import { Title } from "@/components/ui/title";
 
 export default function Home() {
   return (
-    <div className="mx-auto my-8 max-w-[692px] py-5 antialiased sm:my-16 sm:px-6 sm:py-0">
+    <div className="mx-auto my-8 max-w-[692px] py-5 antialiased sm:my-16 sm:px-6 sm:py-0 h-full">
       <Header />
-      <main className="mx-auto flex w-full flex-col items-center justify-center leading-relaxed">
+      <main className="mx-auto flex w-full flex-col items-center h-auto leading-relaxed">
         <div className="px-5">
           <Title>About</Title>
           <Description>
@@ -78,24 +78,24 @@ export default function Home() {
             />
           </div>
         </div>
-        <div className="px-5">
-          <Separator className="mt-16 mb-6 w-full" />
-          <div className="flex flex-wrap justify-between items-start gap-2 w-full ">
-            <span className="text-muted-foreground text-xs">
-              {`© ${new Date().getFullYear()} Carlos Vergikosk. All Rights Reserved.`}
-            </span>
-            <span className="text-muted-foreground text-xs">
-              {`Website built using Next.js & TailwindCSS `}
-              <Reference
-                href="https://github.com/CarlosVergikosk/portofolio"
-                className="decoration-1"
-              >
-                {"(source code)"}
-              </Reference>
-            </span>
-          </div>
-        </div>
       </main>
+      <footer className="px-5 pt-16 mt-auto pb-6 sm:pb-8">
+        <Separator className="my-4 w-full" />
+        <div className="flex flex-wrap justify-between items-start gap-2 w-full ">
+          <span className="text-muted-foreground text-xs">
+            {`© ${new Date().getFullYear()} Carlos Vergikosk. All Rights Reserved.`}
+          </span>
+          <span className="text-muted-foreground text-xs">
+            {`Website built using Next.js & TailwindCSS `}
+            <Reference
+              href="https://github.com/CarlosVergikosk/portofolio"
+              className="decoration-1"
+            >
+              {"(source code)"}
+            </Reference>
+          </span>
+        </div>
+      </footer>
     </div>
   );
 }
