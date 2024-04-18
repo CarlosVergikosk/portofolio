@@ -76,6 +76,11 @@ export default function Home() {
               title={"Pricing Switch"}
               description="Recreation of Layers.to pricing switch"
             />
+            <ComponentItem
+              href="/playground/image-enhancer"
+              title={"Image Enhancer"}
+              description="Image enhancer with a slider"
+            />
           </div>
         </div>
       </main>

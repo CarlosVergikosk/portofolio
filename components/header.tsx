@@ -43,7 +43,7 @@ export default function Header() {
             <span className="flex items-center font-medium text-primary">
               Carlos Vergikosk
             </span>
-            <span className="text-muted-foreground font-normal">
+            <span className="text-muted-foreground font-normal text-sm sm:text-base">
               Frontend Developer / UI Designer
             </span>
           </div>
