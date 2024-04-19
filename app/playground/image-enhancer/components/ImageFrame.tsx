@@ -106,6 +106,7 @@ export default function ImageFrame() {
             src="/image-enhancer.jpg"
             fill
             alt="Meet logo"
+            priority={true}
             style={{
               transform: `scale(${scale})`,
             }}
