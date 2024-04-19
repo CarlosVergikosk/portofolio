@@ -92,7 +92,7 @@ export default function ketl() {
             <Image
               className="rounded-xl mt-12"
               alt="websummit_group"
-              src={"/websummit_group.jpeg"}
+              src={"/websummit_group.jpg"}
               width={500}
               height={200}
             />
@@ -137,7 +137,7 @@ export default function ketl() {
             <Image
               className="rounded-xl mt-12"
               alt="websummit_dinner"
-              src={"/websummit_dinner.jpeg"}
+              src={"/websummit_dinner.jpg"}
               width={500}
               height={200}
             />
