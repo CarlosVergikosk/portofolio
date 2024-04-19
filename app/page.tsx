@@ -3,6 +3,7 @@ import ComponentItem from "@/components/ui/component-item";
 import { Description } from "@/components/ui/description";
 import { Reference } from "@/components/ui/reference";
 import { Separator } from "@/components/ui/separator";
+import StoryItem from "@/components/ui/story-item";
 import { Title } from "@/components/ui/title";
 
 export default function Home() {
@@ -53,7 +54,17 @@ export default function Home() {
             </a>
           </div>
         </div>
-        <div className="mt-16 w-full sm:mt-24 px-5">
+        <div className="mt-16 w-full sm:mt-32 px-5">
+          <Title>Read</Title>
+          <div className="flex flex-col gap-y-2">
+            <StoryItem
+              href="/read/ketl"
+              title={"Ketl - The experience"}
+              description="A deep dive into the story and development of Ketl"
+            />
+          </div>
+        </div>
+        <div className="mt-16 w-full sm:mt-32 px-5">
           <Title>Components</Title>
           <div className="flex flex-col gap-y-2">
             <ComponentItem

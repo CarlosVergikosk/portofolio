@@ -17,7 +17,7 @@ export default function Header() {
       <div className="flex flex-row items-center gap-2 w-full">
         <a
           href="/"
-          className="flex flex-row items-center gap-4 hover:bg-muted/30 rounded-lg p-4 w-full"
+          className="flex flex-row items-center gap-4 hover:bg-muted rounded-lg p-4 w-full"
         >
           <motion.div
             initial={{

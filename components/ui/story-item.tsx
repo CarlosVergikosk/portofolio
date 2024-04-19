@@ -1,6 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 import * as React from "react";
 
 interface Props {
@@ -8,7 +9,7 @@ interface Props {
   description: string;
 }
 
-export default function ComponentItem({
+export default function StoryItem({
   title,
   description,
   href,
@@ -17,11 +18,11 @@ export default function ComponentItem({
   return (
     <a
       target="_self"
-      className="group -mx-4 flex flex-col rounded-xl px-4 py-3 no-underline hover:bg-muted"
+      className="relative group -mx-4 flex flex-col rounded-xl px-4 py-3 no-underline hover:bg-muted overflow-hidden"
       href={href}
       {...props}
     >
-      <span className="flex items-center font-normal">{title}</span>
+      <span className="flex items-center">{title}</span>
       <span className="text-muted-foreground">{description}</span>
     </a>
   );
