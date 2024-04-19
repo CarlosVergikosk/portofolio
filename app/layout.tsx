@@ -20,9 +20,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scrollbar-hide">
-      <body className={cn(inter.className, "h-screen")}>{children}</body>
+      <body className={cn(inter.className, "h-screen")}>
+        {children}
+        <SpeedInsights />
+      </body>
       <Analytics />
-      <SpeedInsights />
     </html>
   );
 }

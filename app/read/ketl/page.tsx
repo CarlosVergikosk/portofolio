@@ -1,12 +1,14 @@
 "use client";
 
+import BalealStory from "@/app/read/ketl/components/baleal-story";
+import BerlinStory from "@/app/read/ketl/components/berlin-story";
+import RestaurantStory from "@/app/read/ketl/components/restaurant-story";
+import WebsummitStory from "@/app/read/ketl/components/websummit-story";
 import Header from "@/components/header";
 import { ContentWrapper } from "@/components/ui/content-wrapper";
 import { Description } from "@/components/ui/description";
 import { Reference } from "@/components/ui/reference";
 import { Title } from "@/components/ui/title";
-import { motion } from "framer-motion";
-import Image from "next/image";
 
 const group = "flex items-center flex-col my-12";
 
@@ -64,196 +66,16 @@ export default function ketl() {
         </div>
 
         <div className={group}>
-          <Title>Alpha Startup at WebSummit 2022</Title>
-          <Description>
-            In 2022, we had the opportunity to attend the WebSummit in Lisbon,
-            Portugal. It was a great experience to present the capital of my
-            country to the team and to show them the amazing food we have.
-          </Description>
-          <motion.div
-            className="z-10"
-            initial="offscreen"
-            whileInView="onscreen"
-            variants={{
-              offscreen: {
-                y: 5,
-                scale: 0.97,
-              },
-              onscreen: {
-                y: 0,
-                scale: 1,
-                transition: {
-                  type: "spring",
-                  bounce: 0.4,
-                },
-              },
-            }}
-          >
-            <Image
-              className="rounded-xl mt-12"
-              alt="websummit_group"
-              src={"/websummit_group.jpg"}
-              width={500}
-              height={200}
-            />
-          </motion.div>
-
-          <span className="text-center w-full text-sm mt-4 text-muted-foreground">
-            {
-              "The team at the Night Summit in Lisbon. (Yes, we were all super tired)"
-            }
-          </span>
+          <WebsummitStory />
         </div>
         <div className={group}>
-          <Title>
-            Eating at the famous{" "}
-            <Reference href="https://www.solardospresuntos.com/">
-              Solar dos Presuntos
-            </Reference>
-          </Title>
-          <Description>
-            I had to bring the team to eat at the famous Solar dos Presuntos, a
-            traditional Portuguese restaurant in Lisbon.
-          </Description>
-          <motion.div
-            className="z-10"
-            initial="offscreen"
-            whileInView="onscreen"
-            variants={{
-              offscreen: {
-                y: 20,
-                scale: 0.97,
-              },
-              onscreen: {
-                y: 0,
-                scale: 1,
-                transition: {
-                  type: "spring",
-                  bounce: 0.4,
-                },
-              },
-            }}
-          >
-            <Image
-              className="rounded-xl mt-12"
-              alt="websummit_dinner"
-              src={"/websummit_dinner.jpg"}
-              width={500}
-              height={200}
-            />
-          </motion.div>
-          <span className="text-center w-full text-sm mt-4 text-muted-foreground">
-            {
-              "The team eating at the famous Solar dos Presuntos restaurant in Lisbon."
-            }
-          </span>
+          <RestaurantStory />
         </div>
         <div className={group}>
-          <Title>Swiss Delegation at Hub Berlin 2022</Title>
-          <Description>
-            We were invited as part of the Swiss delegation to attend the Hub in
-            Berlin. It was a great experience to meet other startups and to see
-            the amazing projects that are being developed in the city.
-          </Description>
-          <motion.div
-            className="z-10"
-            initial="offscreen"
-            whileInView="onscreen"
-            variants={{
-              offscreen: {
-                y: 20,
-                scale: 0.97,
-              },
-              onscreen: {
-                y: 0,
-                scale: 1,
-                transition: {
-                  type: "spring",
-                  bounce: 0.4,
-                },
-              },
-            }}
-          >
-            <Image
-              className="rounded-xl mt-12"
-              alt="websummit_dinner"
-              src={"/me_hub_berlin.jpg"}
-              width={500}
-              height={200}
-            />
-          </motion.div>
-          <span className="text-center w-full text-sm mt-4 text-muted-foreground">
-            Me in front of the Reichstag in Berlin.
-          </span>
+          <BerlinStory />
         </div>
         <div className={group}>
-          <Title>A trip to my home-town</Title>
-          <Description>
-            I had the opportunity to take the team to Baleal, a small village
-            next to the ocean in Portugal.
-          </Description>
-          <Description className="mt-6">
-            We took a car trip from Lisbon to Baleal and then we went to eat at
-            my parent's place. It was a great experience to show them the place
-            where i came from.
-          </Description>
-          <motion.div
-            initial="offscreen"
-            whileInView="onscreen"
-            variants={{
-              offscreen: {
-                y: 40,
-                rotate: 0,
-              },
-              onscreen: {
-                y: 20,
-                rotate: -2,
-                transition: {
-                  type: "spring",
-                  bounce: 0.2,
-                },
-              },
-            }}
-          >
-            <Image
-              className="rounded-xl mt-12 shadow-2xl"
-              alt="websummit_dinner"
-              src={"/baleal/baleal_island.jpg"}
-              width={480}
-              height={200}
-            />
-          </motion.div>
-          <motion.div
-            className="z-10"
-            initial="offscreen"
-            whileInView="onscreen"
-            variants={{
-              offscreen: {
-                y: 5,
-                rotate: 1,
-              },
-              onscreen: {
-                y: 0,
-                rotate: 1,
-                transition: {
-                  type: "spring",
-                  bounce: 0.4,
-                },
-              },
-            }}
-          >
-            <Image
-              className="rounded-xl -mt-2 shadow-2xl"
-              alt="websummit_dinner"
-              src={"/baleal/baleal_team.jpg"}
-              width={540}
-              height={200}
-            />
-          </motion.div>
-
-          <span className="text-center w-full text-sm mt-4 text-muted-foreground">
-            The team next to the ocean at Baleal.
-          </span>
+          <BalealStory />
         </div>
       </ContentWrapper>
     </div>
