@@ -2,13 +2,12 @@
 
 import { Description } from "@/components/ui/description";
 import { Title } from "@/components/ui/title";
-import { ReactLenis } from "@/lib/react-lenis";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function BerlinStory() {
   return (
-    <ReactLenis root>
+    <>
       <Title>Swiss Delegation at Hub Berlin 2022</Title>
       <Description>
         We were invited as part of the Swiss delegation to attend the Hub in
@@ -103,6 +102,6 @@ export default function BerlinStory() {
       <span className="text-center w-full text-sm mt-4 text-muted-foreground">
         Me in front of the Reichstag in Berlin.
       </span>
-    </ReactLenis>
+    </>
   );
 }
