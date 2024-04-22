@@ -18,60 +18,64 @@ export default function BalealStory() {
         parent's place. It was a great experience to show them the place where i
         came from.
       </Description>
-      <motion.div
-        initial="offscreen"
-        whileInView="onscreen"
-        variants={{
-          offscreen: {
-            y: 40,
-            rotate: 0,
-          },
-          onscreen: {
-            y: 20,
-            rotate: -2,
-            transition: {
-              type: "spring",
-              bounce: 0.2,
+      <div className="relative h-[48rem] w-full mt-16">
+        <motion.div
+          className="w-full"
+          initial="offscreen"
+          whileInView="onscreen"
+          variants={{
+            offscreen: {
+              height: 400,
+              y: 40,
+              rotate: 0,
             },
-          },
-        }}
-      >
-        <Image
-          className="rounded-xl mt-12 shadow-2xl"
-          alt="websummit_dinner"
-          src={"/baleal/baleal_island.jpg"}
-          width={480}
-          height={200}
-        />
-      </motion.div>
-      <motion.div
-        className="z-10"
-        initial="offscreen"
-        whileInView="onscreen"
-        variants={{
-          offscreen: {
-            y: 5,
-            rotate: 1,
-          },
-          onscreen: {
-            y: 0,
-            rotate: 1,
-            transition: {
-              type: "spring",
-              bounce: 0.4,
+            onscreen: {
+              height: 400,
+              y: 20,
+              rotate: -2,
+              transition: {
+                type: "spring",
+                bounce: 0.2,
+              },
             },
-          },
-        }}
-      >
-        <Image
-          className="rounded-xl -mt-2 shadow-2xl"
-          alt="websummit_dinner"
-          src={"/baleal/baleal_team.jpg"}
-          width={540}
-          height={200}
-        />
-      </motion.div>
-
+          }}
+        >
+          <Image
+            className="rounded-xl shadow-2xl m-auto"
+            alt="websummit_dinner"
+            src={"/baleal/baleal_island.jpg"}
+            width={480}
+            height={200}
+          />
+        </motion.div>
+        <motion.div
+          className="z-10 absolute bottom-0 w-full"
+          initial="offscreen"
+          whileInView="onscreen"
+          variants={{
+            offscreen: {
+              y: 5,
+              rotate: 1,
+            },
+            onscreen: {
+              y: 0,
+              rotate: 1,
+              transition: {
+                type: "spring",
+                bounce: 0.4,
+              },
+            },
+          }}
+        >
+          <Image
+            className="rounded-xl shadow-2xl m-auto"
+            alt="websummit_dinner"
+            src={"/baleal/baleal_team.jpg"}
+            width={540}
+            height={200}
+          />
+        </motion.div>
+      </div>
       <span className="text-center w-full text-sm mt-4 text-muted-foreground">
         The team next to the ocean at Baleal.
       </span>

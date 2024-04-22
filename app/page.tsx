@@ -65,7 +65,7 @@ export default function Home() {
           </div>
         </div>
         <div className="mt-16 w-full sm:mt-32 px-5">
-          <Title>Components</Title> 
+          <Title>Components</Title>
           <div className="flex flex-col gap-y-2">
             <ComponentItem
               href="/playground/search-bar"

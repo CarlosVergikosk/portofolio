@@ -13,7 +13,7 @@ export default function WebsummitStory() {
         In 2022, we had the opportunity to attend the WebSummit in Lisbon,
         Portugal. It was a great experience to present the capital of my country
         to the team and to show them the amazing food we have.
-      </Description>
+      </Description>  
       <motion.div
         className="z-10"
         initial="offscreen"
