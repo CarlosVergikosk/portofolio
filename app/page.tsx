@@ -92,6 +92,11 @@ export default function Home() {
               title={"Image Enhancer"}
               description="Image enhancer with a slider"
             />
+            <ComponentItem
+              href="/playground/documentation"
+              title={"Documentation"}
+              description="A categorized link library with auto-fetched previews"
+            />
           </div>
         </div>
       </main>
