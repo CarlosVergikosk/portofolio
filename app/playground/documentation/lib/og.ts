@@ -57,6 +57,8 @@ function hostnameOf(url: string): string {
   }
 }
 
+const OG_REVALIDATE_SECONDS = 60 * 60 * 24 * 30;
+
 async function fetchHtml(url: string): Promise<string | null> {
   try {
     const res = await fetch(url, {
@@ -65,7 +67,8 @@ async function fetchHtml(url: string): Promise<string | null> {
           "Mozilla/5.0 (compatible; PortfolioOGBot/1.0; +https://example.com)",
         accept: "text/html,application/xhtml+xml",
       },
-      cache: "no-store",
+      signal: AbortSignal.timeout(2500),
+      next: { revalidate: OG_REVALIDATE_SECONDS },
     });
     if (!res.ok) return null;
     const buffer = await res.arrayBuffer();
@@ -118,8 +121,31 @@ export async function fetchOgMetadata(url: string): Promise<OgMetadata> {
   };
 }
 
+async function mapWithConcurrency<T, R>(
+  items: readonly T[],
+  limit: number,
+  fn: (item: T) => Promise<R>
+): Promise<R[]> {
+  const results = new Array<R>(items.length);
+  let cursor = 0;
+  async function worker() {
+    while (cursor < items.length) {
+      const index = cursor++;
+      results[index] = await fn(items[index]);
+    }
+  }
+  const workers = Array.from({ length: Math.min(limit, items.length) }, () =>
+    worker()
+  );
+  await Promise.all(workers);
+  return results;
+}
+
 export async function fetchAllMetadata(
   urls: readonly string[]
 ): Promise<OgMetadata[]> {
-  return Promise.all(urls.map((url) => fetchOgMetadata(url)));
+  // A single category requests at most ~25 URLs. Capping concurrency keeps the
+  // event loop from being saturated (which previously delayed the per-fetch
+  // abort timers and blew the function past its 10s limit).
+  return mapWithConcurrency(urls, 12, fetchOgMetadata);
 }

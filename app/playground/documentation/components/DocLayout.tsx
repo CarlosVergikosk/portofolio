@@ -9,15 +9,32 @@ import type { OgMetadata } from "@/app/playground/documentation/lib/og"
 import { cn } from "@/lib/utils"
 import { AnimatePresence, motion } from "framer-motion"
 import { ChevronLeft, ChevronRight } from "lucide-react"
-import { useMemo, useState } from "react"
+import { useEffect, useMemo, useRef, useState } from "react"
 
 interface Props {
   categories: DocCategory[]
-  metadata: Record<string, OgMetadata>
 }
 
-export default function DocLayout({ categories, metadata }: Props) {
+function SkeletonRow() {
+  return (
+    <div className="-mx-2 flex items-start gap-3 rounded-lg px-2 py-3">
+      <div className="mt-0.5 h-8 w-8 shrink-0 animate-pulse rounded-md bg-muted" />
+      <div className="flex min-w-0 flex-1 flex-col gap-1.5 py-0.5">
+        <div className="h-4 w-1/3 animate-pulse rounded bg-muted" />
+        <div className="h-3 w-3/4 animate-pulse rounded bg-muted" />
+      </div>
+    </div>
+  )
+}
+
+export default function DocLayout({ categories }: Props) {
   const [path, setPath] = useState<string[]>([])
+  const [metadata, setMetadata] = useState<Record<string, OgMetadata>>({})
+
+  // Mirror metadata in a ref so the fetch effect can check what's already
+  // cached without re-running every time the cache fills in.
+  const metadataRef = useRef(metadata)
+  metadataRef.current = metadata
 
   const current = useMemo(
     () => findCategoryByPath(categories, path),
@@ -28,6 +45,34 @@ export default function DocLayout({ categories, metadata }: Props) {
     ? categories
     : current.children ?? null
   const visibleUrls = current?.urls ?? null
+
+  // When a leaf category is opened, lazily fetch OG metadata for just its
+  // links. Results accumulate in `metadata` so re-opening a category is instant.
+  useEffect(() => {
+    if (!visibleUrls || visibleUrls.length === 0) return
+    const missing = visibleUrls.filter((u) => !metadataRef.current[u])
+    if (missing.length === 0) return
+
+    const controller = new AbortController()
+    const params = new URLSearchParams()
+    for (const url of missing) params.append("u", url)
+
+    fetch(`/playground/documentation/api/og?${params.toString()}`, {
+      signal: controller.signal,
+    })
+      .then((res) => (res.ok ? (res.json() as Promise<OgMetadata[]>) : []))
+      .then((items) => {
+        if (controller.signal.aborted || items.length === 0) return
+        setMetadata((prev) => {
+          const next = { ...prev }
+          for (const item of items) next[item.url] = item
+          return next
+        })
+      })
+      .catch(() => {})
+
+    return () => controller.abort()
+  }, [visibleUrls])
 
   const trail: { name: string; depth: number }[] = []
   let cursor: DocCategory | undefined
@@ -130,10 +175,9 @@ export default function DocLayout({ categories, metadata }: Props) {
               <ul className="flex flex-col gap-1">
                 {visibleUrls.map((url) => {
                   const data = metadata[url]
-                  if (!data) return null
                   return (
                     <li key={url}>
-                      <DocListItem data={data} />
+                      {data ? <DocListItem data={data} /> : <SkeletonRow />}
                     </li>
                   )
                 })}
